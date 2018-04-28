@@ -1,0 +1,11 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+inhibit_all_warnings!
+
+platform :ios, '7.0'
+target :demo do
+
+pod 'ATComponentService', :podspec => 'https://github.com/linzhiman/ATComponentService/blob/master/ATComponentService.podspec?raw=1'
+
+end
+

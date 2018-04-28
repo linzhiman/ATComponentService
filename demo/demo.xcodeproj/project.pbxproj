@@ -100,8 +100,10 @@
 			children = (
 				DCC10B6220945B69005D01E2 /* ATGlobalMacro.h */,
 				DC6101C61F0DE20B00A5B891 /* ComponentInterface */,
-				DC6101C41F0DE20400A5B891 /* AComponent */,
+				DCC10B6420945E2C005D01E2 /* ATComponentService+MainComponent */,
+				DCC10B6320945E19005D01E2 /* ATComponentService+AComponent */,
 				DC6101C51F0DE20400A5B891 /* MainComponent */,
+				DC6101C41F0DE20400A5B891 /* AComponent */,
 				DC3C08231ED9280900187ACA /* AppDelegate.h */,
 				DC3C08241ED9280900187ACA /* AppDelegate.m */,
 				DC3C08261ED9280900187ACA /* ViewController.h */,
@@ -126,8 +128,6 @@
 		DC6101C41F0DE20400A5B891 /* AComponent */ = {
 			isa = PBXGroup;
 			children = (
-				DC6101CD1F0DE2E000A5B891 /* ATComponentService+AComponent.h */,
-				DC6101CE1F0DE2E000A5B891 /* ATComponentService+AComponent.m */,
 				DC6101C81F0DE25900A5B891 /* AComponentDefine.h */,
 				DC6101D01F0DE35200A5B891 /* AComponent.h */,
 				DC6101D11F0DE35200A5B891 /* AComponent.m */,
@@ -138,8 +138,6 @@
 		DC6101C51F0DE20400A5B891 /* MainComponent */ = {
 			isa = PBXGroup;
 			children = (
-				DC6101CA1F0DE2CE00A5B891 /* ATComponentService+MainComponent.h */,
-				DC6101CB1F0DE2CE00A5B891 /* ATComponentService+MainComponent.m */,
 				DC6101C91F0DE26D00A5B891 /* MainComponentDefine.h */,
 				DC6101D31F0DE36200A5B891 /* MainComponent.h */,
 				DC6101D41F0DE36200A5B891 /* MainComponent.m */,
@@ -153,6 +151,24 @@
 				DC6101C71F0DE22400A5B891 /* ComponentInterface.h */,
 			);
 			path = ComponentInterface;
+			sourceTree = "<group>";
+		};
+		DCC10B6320945E19005D01E2 /* ATComponentService+AComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DC6101CD1F0DE2E000A5B891 /* ATComponentService+AComponent.h */,
+				DC6101CE1F0DE2E000A5B891 /* ATComponentService+AComponent.m */,
+			);
+			path = "ATComponentService+AComponent";
+			sourceTree = "<group>";
+		};
+		DCC10B6420945E2C005D01E2 /* ATComponentService+MainComponent */ = {
+			isa = PBXGroup;
+			children = (
+				DC6101CA1F0DE2CE00A5B891 /* ATComponentService+MainComponent.h */,
+				DC6101CB1F0DE2CE00A5B891 /* ATComponentService+MainComponent.m */,
+			);
+			path = "ATComponentService+MainComponent";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

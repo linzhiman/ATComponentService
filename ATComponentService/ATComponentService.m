@@ -102,6 +102,45 @@ static NSMapTable *ComponentClassMap() {
     return aDictionary;
 }
 
++ (NSDictionary *)callComponentWithUrl:(NSURL *)url
+{
+    return [ATComponentService callComponentWithUrl:url callback:nil];
+}
+
+/*
+ scheme://[name]/[command]?[argument]
+ */
++ (NSDictionary *)callComponentWithUrl:(NSURL *)url ATComponentArgument_Callback
+{
+    NSString *name = [ATComponentService nameFromUrl:url];
+    NSString *command = [ATComponentService commandFromUrl:url];
+    NSDictionary *argument = [ATComponentService argumentFromUrl:url];
+    
+    return [ATComponentService callComponentWithName:name command:command argument:argument callback:callback];
+}
+
++ (NSString *)nameFromUrl:(NSURL *)url
+{
+    return url.host;
+}
+
++ (NSString *)commandFromUrl:(NSURL *)url
+{
+    return [url.path stringByReplacingOccurrencesOfString:@"/" withString:@""];
+}
+
++ (NSDictionary *)argumentFromUrl:(NSURL *)url
+{
+    NSMutableDictionary *argument = [[NSMutableDictionary alloc] init];
+    NSString *urlString = [url query];
+    for (NSString *param in [urlString componentsSeparatedByString:@"&"]) {
+        NSArray *elts = [param componentsSeparatedByString:@"="];
+        if([elts count] < 2) continue;
+        [argument setObject:[elts lastObject] forKey:[elts firstObject]];
+    }
+    return [NSDictionary dictionaryWithDictionary:argument];
+}
+
 + (BOOL)hasError:(NSDictionary *)callResult
 {
     return callResult[ATComponentService_ErrorCode] != nil;

@@ -38,7 +38,7 @@
         return callResult; \
     }
 
-typedef void (^ATComponentCallback)(NSString *command, NSDictionary *argument);
+typedef void (^ATComponentCallback)(NSDictionary *argument);
 
 @protocol ATComponentProtocol <NSObject>
 

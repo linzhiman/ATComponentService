@@ -20,6 +20,12 @@
 + (NSDictionary *)callComponentWithName:(NSString *)name command:(NSString *)command argument:(NSDictionary *)argument;
 + (NSDictionary *)callComponentWithName:(NSString *)name command:(NSString *)command argument:(NSDictionary *)argument ATComponentArgument_Callback;
 
++ (NSDictionary *)callComponentWithUrl:(NSURL *)url;
++ (NSDictionary *)callComponentWithUrl:(NSURL *)url ATComponentArgument_Callback;
+
++ (NSString *)nameFromUrl:(NSURL *)url;
++ (NSString *)commandFromUrl:(NSURL *)url;
+
 + (BOOL)hasError:(NSDictionary *)callResult;
 
 @end

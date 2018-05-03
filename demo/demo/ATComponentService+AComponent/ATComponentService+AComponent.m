@@ -14,7 +14,7 @@
 + (void)a_asyncGetAppVersionWithPrefix:(NSString *)prefix callback:(void(^)(NSString *appVersion))callback
 {
     NSDictionary *callArgument = @{Component_A_asyncGetAppVersion_prefix:prefix};
-    [ATComponentService callComponentWithName:Component_A_name command:Component_A_asyncGetAppVersion argument:callArgument callback:^(NSString *command, NSDictionary *argument) {
+    [ATComponentService callComponentWithName:Component_A_name command:Component_A_asyncGetAppVersion argument:callArgument callback:^(NSDictionary *argument) {
         ATSafetyCallblock(callback, argument[Component_A_defaultKey1])
     }];
 }

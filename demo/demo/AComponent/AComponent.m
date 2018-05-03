@@ -26,7 +26,7 @@ ATComponentBaseImplementationHandlerWithCommandBegin(Component_A_asyncGetAppVers
 {
     NSString *prefix = argument[Component_A_asyncGetAppVersion_prefix];
     [ATComponentService main_asyncGetAppVersionWithPrefix:prefix callback:^(NSString *appVersion) {
-        ATSafetyCallblock(callback, Component_A_asyncGetAppVersion, @{Component_A_defaultKey1:appVersion})
+        ATSafetyCallblock(callback, @{Component_A_defaultKey1:appVersion})
     }];
     callResult = @{};
 }

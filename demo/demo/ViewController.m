@@ -39,6 +39,20 @@
             [self setLabelText:appVersion index:2];
         }];
     }}
+    
+    {{//Test3
+        [self setLabelText:@"获取中..." index:2];
+        NSString *urlString = [NSString stringWithFormat:@"aScheme://%@/%@?%@=linzhiman-url", Component_A_name, Component_A_asyncGetAppVersion, Component_A_asyncGetAppVersion_prefix];
+        NSURL *url = [NSURL URLWithString:urlString];
+        [ATComponentService callComponentWithUrl:url callback:^(NSDictionary *argument) {
+            if ([[ATComponentService nameFromUrl:url] isEqualToString:Component_A_name]) {
+                if ([[ATComponentService commandFromUrl:url] isEqualToString:Component_A_asyncGetAppVersion]) {
+                    NSString *appVersion = argument[Component_A_defaultKey1];
+                    [self setLabelText:appVersion index:3];
+                }
+            }
+        }];
+    }}
 }
 
 

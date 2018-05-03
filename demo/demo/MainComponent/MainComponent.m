@@ -38,7 +38,7 @@ ATComponentBaseImplementationHandlerWithCommandBegin(Component_Main_asyncGetAppV
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         NSString *appVersion = [NSString stringWithFormat:@"%@-1.0.0", prefix];
-        ATSafetyCallblock(callback, Component_Main_asyncGetAppVersion, @{Component_Main_defaultKey1:appVersion})
+        ATSafetyCallblock(callback, @{Component_Main_defaultKey1:appVersion})
     });
     
     callResult = @{};

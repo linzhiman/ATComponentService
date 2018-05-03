@@ -41,7 +41,7 @@
     }}
     
     {{//Test3
-        [self setLabelText:@"获取中..." index:2];
+        [self setLabelText:@"获取中..." index:3];
         NSString *urlString = [NSString stringWithFormat:@"aScheme://%@/%@?%@=linzhiman-url", Component_A_name, Component_A_asyncGetAppVersion, Component_A_asyncGetAppVersion_prefix];
         NSURL *url = [NSURL URLWithString:urlString];
         [ATComponentService callComponentWithUrl:url callback:^(NSDictionary *argument) {
